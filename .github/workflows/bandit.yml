@@ -1,4 +1,4 @@
-name: Bandit Security Scan
+name: Bandit
 
 on:
   push:
@@ -10,15 +10,15 @@ jobs:
   bandit:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4  # Шаг 1: Получить код из репозитория
+      - uses: actions/checkout@v4 
       
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
-          python-version: "3.10"  # Укажите версию Python, которую использует ваш проект
+          python-version: "3.10"  
       
       - name: Install Bandit
-        run: pip install bandit  # Установка Bandit
+        run: pip install bandit  
       
       - name: Run Bandit
-        run: bandit -r .  # Запуск Bandit для всего репозитория
+        run: bandit -r .  
